@@ -156,20 +156,23 @@ Scene_Inertia
 ```
 --------------------
 ## Gravity_Room
-Made by Minju Kim
+Made by Minjoo Kim
 ### 1. Purpose of this Scene
-행성별 중력 차이를 체험하는 씬. 지구, 달, 우주(무중력) 환경에서 공이 떨어지는 속도 차이를 관찰할 수 있다.
+이 씬에서는 현실에서 불가능한 중력 환경을 자유롭게 변경할 수 있다. 지구, 달, 우주의 중력을 공을 통해 직접 체험하며, 물리 법칙을 변경할 수 있다는 가상현실의 확장 가능성을 보여준다.
 
 ### 2. Key Logic
 - `GravityPanel.cs`: 패널 클릭 시 Physics.gravity를 해당 행성 값으로 변경하고, 공을 리셋 후 Release
 - `BallReset.cs`: 공을 초기 위치로 되돌리고 isKinematic 해제하여 낙하
+- `ResetPanel.cs`: 리셋 패널 클릭 시 공을 초기 위치로 되돌림
+- `IRayInteractable.cs`: 레이 인터랙션 인터페이스 정의
 - `RayForInteraction.cs`: 왼손 트리거로 레이를 발사하여 패널과 상호작용
 
 ### 3. How to run this Scene
 - Enter: Main_Room에서 Gravity 문을 통해 진입
 - Control:
-	- Experiment 1: EarthPannel 클릭 → 지구 중력(9.81) 적용, 공 낙하 관찰
-	- Experiment 2: MoonPannel 클릭 → 달 중력(1.62) 적용, 공이 천천히 낙하 / SpacePannel 클릭 → 무중력(0) 적용
+	- Experiment 1: 왼쪽 트리거를 당겨 EarthPannel 클릭 → 지구 중력(9.81) 적용, 공 낙하 관찰
+	- Experiment 2: 왼쪽 트리거를 당겨 MoonPannel 클릭 → 달 중력(1.62) 적용, 공이 천천히 낙하
+ 	- Experiment 3: 왼쪽 트리거를 당겨 SpacePanel 클릭 → 무중력(0 m/s²) 적용, 공이 낙하하지 않음
 - Exit: Door를 통해 Main_Room으로 복귀
 
 ### 4. Directory of this Scene
